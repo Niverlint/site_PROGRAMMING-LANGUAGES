@@ -1,0 +1,92 @@
+/* ===== Страница 1: чашка кофе ===== */
+
+.coffee-mug {
+  background: #3F2616;
+  position: relative;
+  margin: 100px auto 200px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 10px #442918,
+    0 0 0 25px #3C2415,
+    0 0 0 42px #6d8397,
+    0 0 0 65px #6d8397,
+    0 120px 0 -25px #3C2415,
+    100px 70px 0 -25px #3C2415,
+    80px 140px 0 -10px #3C2415,
+    0 210px 0 -55px #3C2415,
+    20px 250px 0 -65px #3C2415;
+}
+
+/* ручка */
+.coffee-mug::before {
+  content: '';
+  position: absolute;
+  background: #6d8397;
+  height: 80px;
+  width: 60px;
+  top: -85px;
+  right: -75px;
+  border-radius: 5px;
+  box-shadow: inset 0 50px 0 0 #6d8397;
+  transform: rotate(45deg);
+}
+
+/* расходящиеся круги на поверхности */
+.coffee-mug::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  border: 3px solid #77665C;
+  inset: 0;
+  margin: auto;
+  opacity: 0.2;
+  animation: rings 3s ease-out infinite;
+}
+
+@keyframes rings {
+  to {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .coffee-mug {
+    margin: 70px auto 150px auto;
+    width: 75px;
+    height: 75px;
+    box-shadow:
+      0 0 0 10px #442918,
+      0 0 0 25px #3C2415,
+      0 0 0 35px #6d8397,
+      0 0 0 50px #6d8397,
+      0 120px 0 -25px #3C2415,
+      100px 70px 0 -25px #3C2415,
+      80px 140px 0 -10px #3C2415,
+      0 210px 0 -55px #3C2415,
+      20px 250px 0 -65px #3C2415;
+  }
+
+  .coffee-mug::before {
+    height: 60px;
+    width: 40px;
+    top: -65px;
+    right: -55px;
+  }
+
+  .coffee-mug::after {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coffee-mug::after {
+    animation: none;
+  }
+}

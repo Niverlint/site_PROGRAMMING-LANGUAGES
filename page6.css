@@ -1,0 +1,21 @@
+/* ===== Страница 6: Настаивание (космос, чёрная дыра) ===== */
+
+/* тёмно-фиолетовый космос */
+body.page-6::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 20%, rgba(70, 40, 120, 0.35), rgba(10, 10, 40, 0.55));
+}
+
+/* снежинки превращаются в звёзды */
+body.page-6 .snowflake {
+  color: #dfe6ff;
+}
+
+body.page-6 .warning {
+  background: #eeeaf8;
+  border-left-color: #6a4cb0;
+}

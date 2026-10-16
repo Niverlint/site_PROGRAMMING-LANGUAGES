@@ -1,0 +1,21 @@
+/* ===== Страница 7: Зачарование (мир магии) ===== */
+
+/* золотисто-фиолетовый оттенок */
+body.page-7::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(110, 50, 150, 0.3), rgba(200, 150, 50, 0.25));
+}
+
+/* вместо снежинок падают искры магии */
+body.page-7 .snowflake {
+  color: #ffe08a;
+}
+
+body.page-7 .warning {
+  background: #fff4d6;
+  border-left-color: #c9962b;
+}

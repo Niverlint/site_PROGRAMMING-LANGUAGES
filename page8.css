@@ -1,0 +1,19 @@
+/* ===== Страница 8: Подача и результат (спокойное утро) ===== */
+
+/* тёплый светлый оттенок: после приключения всё снова обычно */
+body.page-8::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(220, 180, 130, 0.2);
+}
+
+/* блок результата дегустации */
+.result {
+  padding: 10px 14px;
+  background: #eef7ee;
+  border-left: 4px solid #5a9a5a;
+  border-radius: 4px;
+}

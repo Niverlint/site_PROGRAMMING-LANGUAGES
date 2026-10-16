@@ -1,0 +1,19 @@
+/* ===== Страница 9: Информация о проекте (спокойный справочный вид) ===== */
+
+/* лёгкий нейтральный оттенок */
+body.page-9::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* блок отказа от ответственности */
+.disclaimer {
+  padding: 10px 14px;
+  background: #f1f3f5;
+  border-left: 4px solid #8a97a3;
+  border-radius: 4px;
+}

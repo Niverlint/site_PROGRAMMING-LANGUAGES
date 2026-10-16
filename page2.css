@@ -1,0 +1,11 @@
+/* ===== Страница 2: Сбор зёрен ===== */
+
+/* лёгкий зелёный оттенок джунглей */
+body.page-2::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(40, 110, 80, 0.22);
+}
