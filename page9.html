@@ -52,26 +52,58 @@
 
 					<p><strong>О сайте</strong></p>
 
-					<p>Протокол МКСК-ПР-0093 составлен Международным комитетом по стандартизации кофе. Комитет состоит из одного человека. Сайт создан как учебный проект: 10 страниц.</p>
+					<p>Протокол МКСК-ПР-0093 составлен Международным комитетом по стандартизации кофе. Комитет состоит из одного человека. Сайт создан как учебный проект: 10 страниц на HTML, CSS и JavaScript, объединённых общей историей и навигацией.</p>
 
 					<p><strong>Автор</strong></p>
 
-					<p>Асанбеков Амаль. Комитет настаивает на том, что автор ни разу не удивился.</p>
+					<p>[имя автора]. Комитет настаивает на том, что автор ни разу не удивился.</p>
 
 					<p><strong>Технологии</strong></p>
 
 					<ul>
-						<li>HTML и CSS</li>
+						<li>HTML и CSS, а также немного JavaScript: проверка формы регулярными выражениями (validation.js)</li>
+						<li>Анимации (снежинки, круги на кофе, чашка) сделаны только средствами CSS</li>
 						<li>Шрифты Neucha и Caveat из Google Fonts</li>
+						<li>Оформление каждой страницы лежит в отдельном CSS-файле, общие стили &mdash; в styles.css</li>
 					</ul>
 
-					<p><strong>Вдохновение</strong></p>
+					<p><strong>Вдохновение и благодарности</strong></p>
 
 					<ul>
 						<li>Дизайн основан на сайте «Dear Coffee» Джессики Пеласки (2016).</li>
-						<li>Идея подачи: видео с канала Yellowcake.</li>
-						<li>Отсылки: мастер но свиток пуст</li>
+						<li>Идея подачи: юмористическое видео о приготовлении кофе, где невозможное описывается как обычная техника.</li>
+						<li>Отсылки: «Путешествие на Запад», карело-финский эпос и мельница Сампо, IndustrialCraft 2, Minecraft.</li>
 					</ul>
+
+					<p><strong>Обратная связь</strong></p>
+
+					<p>Если у вас остались вопросы по протоколу, оставьте заявку. Комитет рассмотрит её в порядке очереди.</p>
+
+					<form id="contact-form" class="form" novalidate>
+
+						<div class="field">
+							<label for="fio">ФИО</label>
+							<input type="text" id="fio" name="fio" autocomplete="name" placeholder="Иванов Иван Иванович" aria-describedby="fio-error" aria-invalid="false" required>
+							<p class="error" id="fio-error" aria-live="polite"></p>
+						</div>
+
+						<div class="field">
+							<label for="phone">Номер телефона</label>
+							<input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+996 555 657 456" aria-describedby="phone-error" aria-invalid="false" required>
+							<p class="error" id="phone-error" aria-live="polite"></p>
+						</div>
+
+						<div class="field">
+							<label for="email">Почта</label>
+							<input type="email" id="email" name="email" autocomplete="email" placeholder="ivanovivanivanovich@gmail.com" aria-describedby="email-error" aria-invalid="false" required>
+							<p class="error" id="email-error" aria-live="polite"></p>
+						</div>
+
+						<button type="submit" class="button">Отправить заявку</button>
+
+						<p class="success" id="form-success" role="status" hidden>Заявка принята. Комитет ответит в течение 40 000 лет.</p>
+
+					</form>
 
 					<p class="disclaimer"><strong>Отказ от ответственности.</strong> Авторы не несут ответственности за потерянные зёрна, вторники и измерения. Повторять описанное не рекомендуется. Готовый кофе по-прежнему продаётся в магазинах.</p>
 
@@ -105,6 +137,8 @@
 		</section>
 
 	</div>
+
+	<script src="index.js"></script>
 
 </body>
 
