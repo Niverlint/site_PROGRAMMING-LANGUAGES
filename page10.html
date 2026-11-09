@@ -51,6 +51,47 @@
 				</div>
 			</section>
 
+			<section id="comments">
+
+				<div class="paper">
+					<div class="paperborder">
+
+						<h3 class="center">Комментарии</h3>
+
+						<p class="comments-lead">Оставьте комментарий к протоколу. Все комментарии публикуются анонимно: вам автоматически присваивается номер (Аноним 5, Аноним 6 и так далее).</p>
+
+						<form id="commentForm" class="comment-form" novalidate>
+
+							<input type="hidden" id="commentId">
+
+							<div class="field">
+								<label for="commentText">Комментарий</label>
+								<textarea id="commentText" name="text" rows="4" maxlength="300" placeholder="Как прошло приготовление?" aria-describedby="commentError" required></textarea>
+							</div>
+
+							<p class="comment-error" id="commentError" aria-live="polite"></p>
+
+							<div class="form-buttons">
+								<button type="submit" class="btn" id="commentSubmit">Добавить комментарий</button>
+								<button type="button" class="btn btn-light" id="commentCancel" hidden>Отмена</button>
+							</div>
+
+							<p class="comment-status" id="commentStatus" role="status"></p>
+
+						</form>
+
+						<div class="comments-bar">
+							<span id="commentsCount" class="comments-count"></span>
+							<button type="button" class="btn btn-light btn-small" id="commentsRefresh">Обновить все комментарии</button>
+						</div>
+
+						<div id="commentsContainer" class="comments-list"></div>
+
+					</div>
+				</div>
+
+			</section>
+
 		</main>
 
 		<nav id="pages" aria-label="Страницы сайта">
