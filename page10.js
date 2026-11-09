@@ -1,10 +1,3 @@
-/* ===== Страница 10 =====
-   Часть 1: пояснения. List и Detail (модальное окно), данные из processes.json
-   Часть 2: комментарии. CRUD (создать, прочитать, изменить, удалить), данные из comments.json */
-
-
-/* ==================== ЧАСТЬ 1. LIST И DETAIL ==================== */
-
 const DATA_URL = 'processes.json';
 const productGrid = document.getElementById('product-grid');
 const detailSection = document.getElementById('detail-section');
@@ -95,11 +88,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-/* ==================== ЧАСТЬ 2. КОММЕНТАРИИ (CRUD) ====================
-   Все комментарии анонимные: автору автоматически даётся имя «Аноним N».
-   Данные читаются из comments.json, а добавление, изменение и удаление работают
-   с массивом localComments. Записать в сам JSON-файл браузер не может,
-   поэтому после перезагрузки страницы список вернётся к исходному. */
+/* КОММЕНТАРИИ   */
 
 const COMMENTS_URL = 'comments.json';
 
@@ -132,7 +121,7 @@ function formatDate(iso) {
     return date.toLocaleString('ru-RU', { dateStyle: 'medium', timeStyle: 'short' });
 }
 
-/* READ: загрузка комментариев из JSON */
+/* READ */
 async function fetchComments() {
     try {
         const response = await fetch(COMMENTS_URL, { cache: 'no-store' });
@@ -149,7 +138,7 @@ async function fetchComments() {
     }
 }
 
-/* READ: вывод списка */
+/* READ */
 function renderComments() {
     commentsContainer.innerHTML = '';
     commentsCount.textContent = `Комментариев: ${localComments.length}`;
@@ -178,15 +167,8 @@ function renderComments() {
     });
 }
 
-/* Проверка текста комментария */
-function validateComment(text) {
-    if (text.length < 3 || text.length > 300) {
-        return 'Комментарий должен быть от 3 до 300 символов.';
-    }
-    return '';
-}
 
-/* CREATE и UPDATE: отправка формы */
+/* CREATE и UPDATE */
 commentForm.addEventListener('submit', (e) => {
     e.preventDefault();
     commentStatus.textContent = '';
@@ -230,7 +212,7 @@ commentForm.addEventListener('submit', (e) => {
     }
 });
 
-/* Кнопки «Редактировать» и «Удалить» (делегирование событий) */
+/* Кнопки «Редактировать» и «Удалить» */
 commentsContainer.addEventListener('click', (e) => {
     const btn = e.target.closest('button[data-action]');
     if (!btn) return;
@@ -239,7 +221,7 @@ commentsContainer.addEventListener('click', (e) => {
     if (btn.dataset.action === 'delete') deleteComment(id);
 });
 
-/* UPDATE: подготовка формы к изменению */
+/* UPDATE */
 function prepareCommentUpdate(id) {
     const comment = localComments.find(c => c.id === id);
     if (!comment) return;
@@ -276,14 +258,6 @@ function resetCommentForm() {
 commentCancelBtn.addEventListener('click', () => {
     resetCommentForm();
     commentStatus.textContent = '';
-});
-
-/* Обновить все комментарии: заново загрузить список из JSON */
-commentsRefreshBtn.addEventListener('click', async () => {
-    resetCommentForm();
-    commentStatus.textContent = 'Загрузка…';
-    const ok = await fetchComments();
-    commentStatus.textContent = ok ? 'Список комментариев обновлён.' : '';
 });
 
 
